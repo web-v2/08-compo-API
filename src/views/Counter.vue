@@ -9,26 +9,15 @@
   </template>
 
 <script>
-import { ref } from 'vue';
-
+import useCounter from '@/hooks/useCounter'
 export default {
     name: 'Counter',
     props: {},
     emies: [],
     setup() {
-        const nameCount = ref(18);
-        /*const increase = () =>{
-            nameCount.value++
-        }
-        const decrease = () =>{
-            nameCount.value--
-        }*/
-        return {
-            nameCount,
-            
-            increase: () => nameCount.value++,
-            decrease: () => nameCount.value--
-        }
+        const {nameCount, increase, decrease} = useCounter()
+
+        return {nameCount, increase, decrease}
     }
 }
 </script>
