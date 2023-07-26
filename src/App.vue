@@ -5,6 +5,7 @@
     <router-link :to="{name: 'counter'}">Counter</router-link>|
     <router-link :to="{name: 'users'}">Usuarios</router-link>|
     <router-link :to="{name: 'pokemon-search'}">Buscar Pokemón</router-link>|
+    <router-link :to="{name: 'todo'}">Thanos Todo</router-link>|
   </nav>
 
   <router-view v-slot="{ Component, route }">
