@@ -1,14 +1,19 @@
 <template>
     <h1>Modal</h1>
-    <div class="modal-background fade-in">
+    <div class="modal-background fade-in" @click.self="$emit('on:close')">
         <div class="modal-container">
-            <slot/>
+            <slot name="header" />
+            <hr>
+            <slot name="body" />
+            <hr>
+            <slot name="footer" />
         </div>
     </div>
 </template>
 
 <script>
 export default {
+  emits: ['on:close'],
   setup( props, context ){
 
   }

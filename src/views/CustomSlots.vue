@@ -1,19 +1,27 @@
 <template>
   <h1>Aprendiendo Slots</h1>
-  <button class="active">Abril Modal</button>
-  <modal title="Modal Slots">
-    <h2>Titulo Slots</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    <button>Cerrar</button>
-  </modal> 
-</template>
+  <button class="active" @click="openModal">Abril Modal</button>
 
+<Modal v-if="isOpen" @on:close="closeModal">
+  <template v-slot:header><h2>Titulo Slots</h2></template>
+  <template v-slot:body><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></template>
+  <template v-slot:footer><button @click="closeModal">Cerrar</button></template>  
+</Modal>
+  
+</template>
 <script>
 import Modal from '@/components/Modal.vue'
+import { ref } from 'vue';
 export default {
   components: { Modal },
     setup(){
-        
+      const isOpen = ref(false)
+        return {
+          isOpen,
+
+          openModal: () => isOpen.value = true,
+          closeModal: () => isOpen.value = false
+        }
     }
 }
 </script>
