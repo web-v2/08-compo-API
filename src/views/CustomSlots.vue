@@ -2,10 +2,11 @@
   <h1>Aprendiendo Slots</h1>
   <button class="active" @click="openModal">Abril Modal</button>
 
-<Modal v-if="isOpen" @on:close="closeModal">
+<Modal v-if="isOpen" @on:close="closeModal" title="helloWorld">
   <template v-slot:header><h2>Titulo Slots</h2></template>
   <template v-slot:body><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></template>
   <template v-slot:footer><button @click="closeModal">Cerrar</button></template>  
+  <template v-slot:exposed="{newTitle}">{{ newTitle }}</template>  
 </Modal>
   
 </template>

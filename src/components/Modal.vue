@@ -3,19 +3,28 @@
     <div class="modal-background fade-in" @click.self="$emit('on:close')">
         <div class="modal-container">
             <slot name="header" />
-            <hr>
             <slot name="body" />
-            <hr>
             <slot name="footer" />
+            <br>
+            <br>
+            <slot name="exposed" :newTitle="newTitle" />
         </div>
     </div>
 </template>
 
 <script>
 export default {
+  props: {
+    title: {
+      type: String,
+      required: true
+    }
+  },  
   emits: ['on:close'],
   setup( props, context ){
-
+    return {
+      newTitle: props.title?.toUpperCase()
+    }
   }
 }
 </script>
@@ -35,8 +44,8 @@ export default {
 }
 
 .modal-container {
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
