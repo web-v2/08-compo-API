@@ -1,3 +1,5 @@
+<a href="https://vuejs.org" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" width="300" height="300" alt="VueJs" /></a>
+
 # 08-compo-api
 _Aplicación desarrollada en Vue.js del curso de Fernando Herrera, con este proyecto se inicia con las bases al Composition API fundamental en Vue 3._
 
